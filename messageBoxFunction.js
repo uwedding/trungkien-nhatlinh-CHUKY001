@@ -34,10 +34,10 @@ function Handle_MessageBox(
       const getMessage = messages.filter(
         (msg) => msg["Ai thấy lời chúc"] === "Mọi người"
       );
-
       const container = document.getElementById("MessageBox");
+      container.innerHTML = "";
 
-      getMessage?.reverse().map((msg) => {
+      getMessage.reverse().map((msg) => {
         // Tạo khung chứa message item
         const item = document.createElement("div");
         item.classList.add("MessageBox-item");
@@ -75,7 +75,7 @@ function Refesh_MessageBox(
     $(triggerSelector).click(function () {
       // Refresh 3 lần với khoảng cách thời gian khác nhau
       setTimeout(function () {
-        $("#MessageBox").empty();
+        $("#MessageBox").text("", "");
         Handle_MessageBox(
           sheetId,
           range,
@@ -84,10 +84,10 @@ function Refesh_MessageBox(
           filterCol,
           filterValue
         );
-      }, 3000);
+      }, 2000);
 
       setTimeout(function () {
-        $("#MessageBox").empty();
+        $("#MessageBox").text("", "");
         Handle_MessageBox(
           sheetId,
           range,
@@ -96,7 +96,19 @@ function Refesh_MessageBox(
           filterCol,
           filterValue
         );
-      }, 7000);
+      }, 5000);
+
+      setTimeout(function () {
+        $("#MessageBox").text("", "");
+        Handle_MessageBox(
+          sheetId,
+          range,
+          nameCol,
+          messageCol,
+          filterCol,
+          filterValue
+        );
+      }, 10000);
     });
   });
 }

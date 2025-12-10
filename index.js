@@ -63,6 +63,42 @@ document
     });
   });
 
+
+function changeTaret() {
+  var urlString = window.location.href;
+  var url = new URL(urlString);
+  const target = url.searchParams.get("thiep")
+  if (target === 'nha-gai') {
+    const HEADLINE178 = document.querySelector('#HEADLINE178 .ladi-headline');
+    const HEADLINE1781 = document.querySelector('#HEADLINE1781 .ladi-headline');
+    const HEADLINE175 = document.querySelector('#HEADLINE175 .ladi-headline');
+    const HEADLINE176 = document.querySelector('#HEADLINE176 .ladi-headline');
+
+    if (HEADLINE178) {
+      HEADLINE178.textContent = 'Lễ Vu Quy';
+    }
+
+    if (HEADLINE1781) {
+      HEADLINE1781.textContent = '09H00';
+    }
+
+    if (HEADLINE175) {
+      HEADLINE175.innerHTML = 'Tại Tư Gia Nhà Gái';
+    }
+
+    if (HEADLINE176) {
+      HEADLINE176.innerHTML = 'Số 16 Ngách 1 - Ngõ 48 Đường Phan Đình Giót <br/>Tổ Dân Phố 4 La Khê <br /> Hà Đông - Hà Nội';
+    }
+  }
+}
+
+window.addEventListener("load", () => {
+  changeTaret(); // Gọi hàm load dữ liệu
+});
+
+
+
+
 // Hiển thị notification
 //     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 

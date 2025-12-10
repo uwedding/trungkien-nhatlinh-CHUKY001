@@ -26,7 +26,7 @@ function CreateName(Name) {
 function CreateNameV2(Name, style) {
   var urlString = window.location.href;
   var url = new URL(urlString);
-  var nameValue = url.searchParams.get("name");
+  var nameValue = url.searchParams.get("name") || url.searchParams.get("n");
   const newName = String(nameValue);
 
   if (nameValue !== null) {
