@@ -56,7 +56,7 @@ document
       .then((res) => {
         form.reset();
         run_MessageBox();
-      }); // Reset form sau khi gửi;
+      });
     document.getElementById("SECTION18").scrollIntoView({
       behavior: "smooth",
       block: "start",
